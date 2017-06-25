@@ -9,7 +9,7 @@ const outputFolder = 'public/outputs';
 
 // Regex patterns
 const patterns = {
-  pdf: /\.pdf$/g,
+  pdf: /\.pdf$/,
 };
 
 // Contains urls
@@ -79,6 +79,7 @@ function getAllSenateProjectLinks(html) {
     }
   });
 
+  console.log(json.links.length);
   // Write file
   fs.writeFile(outputFile, JSON.stringify(json, null, 4), function(err) {
     if (err) {
